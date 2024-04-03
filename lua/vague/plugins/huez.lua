@@ -1,7 +1,6 @@
 return {
     "vague2k/huez.nvim",
-    dev = false,
-    enable = false,
+    dev = true,
     config = function()
         require("huez").setup({
             -- the filepath where your theme will be saved
@@ -35,7 +34,7 @@ return {
             -- optional: by default, picker will be vim.ui.select, you can also choose "telescope"
             picker = "telescope",
             -- optional: only applies if using telescope, picker_opts controls the dropdown style
-            picker_opts = require("telescope.themes").get_dropdown({}),
+            picker_opts = nil,
         })
 
         local colorscheme = require("huez.api").get_colorscheme()
