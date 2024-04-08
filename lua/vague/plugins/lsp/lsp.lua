@@ -50,6 +50,7 @@ return {
                     "cssls",
                     "tailwindcss",
                     "rust_analyzer",
+                    "jsonls",
                 },
 
                 handlers = {

@@ -12,7 +12,7 @@ return {
             -- this controls the behaviour of `CdProjectAdd` command about how to get the project directory
             project_dir_pattern = { ".git", ".gitignore", "Cargo.toml", "package.json", "go.mod" },
             choice_format = "both", -- optional, you can switch to "name" or "path"
-            projects_picker = "vim-ui", -- optional, you can switch to `telescope`
+            projects_picker = "telescope", -- optional, you can switch to `telescope`
             -- do whatever you like by hooks
             hooks = {
                 {

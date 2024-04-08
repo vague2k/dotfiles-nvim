@@ -19,7 +19,7 @@ require("lazy").setup({
 }, {
     -- GitHub repo name and local repo name should be the same
     dev = {
-        path = Get_github_path(),
+        path = Project_path(),
     },
     performance = {
         rtp = {
