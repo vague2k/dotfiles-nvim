@@ -5,7 +5,22 @@ return {
         require("nvim-treesitter.install").compilers = { "clang", "gcc" }
         local treesitter = require("nvim-treesitter.configs")
         treesitter.setup({
-            ensure_installed = { "vim", "vimdoc", "lua", "cpp", "python", "go", "tsx", "sql", "astro", "css" },
+            ensure_installed = {
+                "vim",
+                "vimdoc",
+                "lua",
+                "cpp",
+                "python",
+                "go",
+                "tsx",
+                "sql",
+                "astro",
+                "css",
+                "regex",
+                "bash",
+                "markdown",
+                "markdown_inline",
+            },
 
             auto_install = false,
             sync_install = false,
