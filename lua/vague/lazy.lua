@@ -16,6 +16,7 @@ require("lazy").setup({
     { import = "vague.plugins.lsp" },
     { import = "vague.plugins.themes" },
     { import = "vague.plugins.misc" },
+    { import = "vague.plugins.contrib" },
 }, {
     -- GitHub repo name and local repo name should be the same
     dev = {
