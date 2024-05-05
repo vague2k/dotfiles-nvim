@@ -1,10 +1,8 @@
-function P(value)
-    print(vim.inspect(value))
-    return value
-end
-
-function R(name)
-    return require("plenary.reload").reload_module(name)
+function R()
+    local cwd = vim.fn.getcwd()
+    local split_path = vim.fn.split(cwd, "/")
+    local plugin_name = split_path[#split_path]
+    vim.cmd("Lazy reload " .. plugin_name)
 end
 
 function Project_path()
