@@ -1,9 +1,9 @@
 return {
     "vague2k/huez.nvim",
     dev = true,
+    import = "huez_manager.manage",
     dependencies = {
-        "MunifTanjim/nui.nvim",
-        "grapp-dev/nui-components.nvim",
+        "nvim-telescope/telescope.nvim",
     },
     config = function()
         require("huez").setup({
