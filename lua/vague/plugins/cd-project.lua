@@ -1,7 +1,6 @@
 return {
     "LintaoAmons/cd-project.nvim",
     dev = true,
-    event = { "CmdlineEnter" },
     keys = { "<leader><leader>o" },
     -- Don't need call the setup function if you think you are good with the default configuration
     config = function()

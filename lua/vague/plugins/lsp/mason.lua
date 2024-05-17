@@ -7,6 +7,7 @@ return {
     },
     config = function()
         require("mason-null-ls").setup({
+            -- ensure these formatters are installed
             ensure_installed = {
                 "stylua",
                 "biome",

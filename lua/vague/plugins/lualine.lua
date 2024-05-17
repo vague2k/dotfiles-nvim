@@ -1,5 +1,6 @@
 return {
     "nvim-lualine/lualine.nvim",
+    event = "VeryLazy",
     dependecies = {
         { "nvim-tree/nvim-web-devicons", lazy = true },
     },
@@ -14,14 +15,6 @@ return {
                 lualine_a = { "mode" },
                 lualine_b = { "branch", "diff", "diagnostics" },
                 lualine_c = { "filename" },
-                lualine_x = {},
-                lualine_y = {},
-                lualine_z = {},
-            },
-            inactive_sections = {
-                lualine_a = {},
-                lualine_b = {},
-                lualine_c = {},
                 lualine_x = {},
                 lualine_y = {},
                 lualine_z = {},

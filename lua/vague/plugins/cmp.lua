@@ -1,6 +1,6 @@
 return {
     "hrsh7th/nvim-cmp",
-    event = { "BufEnter", "CmdlineEnter" },
+    event = { "InsertEnter", "CmdlineEnter" },
     dependencies = {
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-buffer",
@@ -63,6 +63,8 @@ return {
                 end,
             },
 
+            -- formats cmp items, my formatting currently is,
+            -- [LSP] cmp_item     Function
             formatting = {
                 expandable_indicator = true,
                 fields = { "menu", "abbr", "kind" },
@@ -79,17 +81,16 @@ return {
             },
 
             window = {
-                completion = cmp.config.window.bordered(),
-                documentation = cmp.config.window.bordered(),
+                completion = cmp.config.window.bordered(), -- add border to cmp window
+                documentation = cmp.config.window.bordered(), -- show docs for cmp item if hovered
             },
 
             mapping = cmp.mapping.preset.insert({
-                ["<C-n>"] = cmp.mapping.select_next_item(),
-                ["<C-p>"] = cmp.mapping.select_prev_item(),
-                ["<C-d>"] = cmp.mapping.scroll_docs(-4),
-                ["<C-f>"] = cmp.mapping.scroll_docs(4),
-                ["<C-Space>"] = cmp.mapping.complete({}),
-                ["<CR>"] = cmp.mapping.confirm({
+                ["<C-n>"] = cmp.mapping.select_next_item(), -- goto next cmp item
+                ["<C-p>"] = cmp.mapping.select_prev_item(), -- goto prev cmp item
+                ["<C-d>"] = cmp.mapping.scroll_docs(-4), -- scroll doc window
+                ["<C-f>"] = cmp.mapping.scroll_docs(4), -- scroll doc window
+                ["<CR>"] = cmp.mapping.confirm({ -- confirm the cmp item selection
                     behavior = cmp.ConfirmBehavior.Replace,
                     select = true,
                 }),
@@ -103,6 +104,7 @@ return {
             }),
         })
 
+        -- enables completion for searching in buffer
         -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
         cmp.setup.cmdline({ "/", "?" }, {
             mapping = cmp.mapping.preset.cmdline(),
@@ -111,6 +113,7 @@ return {
             },
         })
 
+        -- enables completion for cmdline
         -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
         cmp.setup.cmdline(":", {
             mapping = cmp.mapping.preset.cmdline(),
