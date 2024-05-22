@@ -1,7 +1,7 @@
 return {
     "vague2k/huez.nvim",
     dev = true,
-    import = "huez_manager.manage",
+    import = "huez-manager.import",
     event = "UIEnter",
     config = function()
         require("huez").setup({

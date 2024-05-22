@@ -25,8 +25,3 @@ keymap("n", "<leader><leader>m", function() -- hot reload local plugins using :L
     local plugin_name = split_path[#split_path]
     vim.cmd("Lazy reload " .. plugin_name)
 end, opts)
-
-keymap("n", "<leader><leader>r", function() -- hot reload local plugins using :Lazy reload
-    local zenmode = require("zen-mode")
-    zenmode.toggle()
-end, opts)

@@ -25,6 +25,11 @@ return {
             bufmap("<leader>d", vim.diagnostic.open_float) -- display diagnostic information
             bufmap("<leader>dn", vim.diagnostic.goto_next) -- goto next diagnostic
             bufmap("<leader>dp", vim.diagnostic.goto_prev) -- goto prev diagnostic
+
+            local hint = vim.lsp.inlay_hint -- toggle LSP inlay hints
+            bufmap("<leader>n", function()
+                hint.enable(not hint.is_enabled({}))
+            end)
         end)
 
         lsp_zero.setup()
@@ -51,11 +56,11 @@ return {
 
                 lua_ls = function()
                     require("neodev").setup({
-                        override = function(root_dir, library)
-                            root_dir = root_dir
-                            library.plugins = true
-                            library.enabled = true
-                        end,
+                        -- override = function(root_dir, library)
+                        --     root_dir = root_dir
+                        --     library.plugins = true
+                        --     library.enabled = true
+                        -- end,
                     })
                     require("lspconfig").lua_ls.setup({
                         settings = {
@@ -63,6 +68,7 @@ return {
                                 diagnostics = {
                                     globals = { "vim" },
                                 },
+                                hint = { enable = true },
                                 workspace = { checkThirdParty = false },
                                 telemetry = { enable = false },
                             },
