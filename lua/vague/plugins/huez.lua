@@ -4,9 +4,7 @@ return {
     import = "huez-manager.import",
     event = "UIEnter",
     config = function()
-        require("huez").setup({
-            fallback = "zenbones",
-        })
+        require("huez").setup()
         vim.keymap.set("n", "<leader>co", ":Huez<CR>", {})
     end,
 }

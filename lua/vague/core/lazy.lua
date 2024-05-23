@@ -15,7 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     { import = "vague.plugins" },
     { import = "vague.plugins.lsp" },
-    { import = "vague.plugins.themes" },
+    -- { import = "vague.plugins.themes" },
     { import = "vague.plugins.misc" },
 }, {
     -- dir where local plugins are stored
