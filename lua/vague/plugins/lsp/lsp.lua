@@ -6,7 +6,7 @@ return {
         "neovim/nvim-lspconfig",
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
-        "folke/neodev.nvim",
+        "folke/lazydev.nvim",
         { "antosha417/nvim-lsp-file-operations", config = true },
     },
     config = function()
@@ -55,7 +55,7 @@ return {
                 lsp_zero.default_setup,
 
                 lua_ls = function()
-                    require("neodev").setup({
+                    require("lazydev").setup({
                         -- override = function(root_dir, library)
                         --     root_dir = root_dir
                         --     library.plugins = true
