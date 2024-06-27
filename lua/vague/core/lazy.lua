@@ -17,6 +17,8 @@ require("lazy").setup({
     { import = "vague.plugins.lsp" },
     { import = "vague.plugins.lang.go" },
     { import = "vague.plugins.lang.css" },
+    { import = "vague.plugins.lang.python" },
+    { import = "vague.plugins.lang.markdown" },
 }, {
     -- dir where local plugins are stored
     dev = { path = "~/Documents/GitHub" },
