@@ -1,4 +1,4 @@
 return {
-    "norcalli/nvim-colorizer.lua",
-    ft = { "jsx", "tsx", "js", "ts", "html", "astro", "mjs", "css" },
+  "norcalli/nvim-colorizer.lua",
+  ft = { "jsx", "tsx", "js", "ts", "html", "astro", "mjs", "css" },
 }

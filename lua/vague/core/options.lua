@@ -13,6 +13,6 @@ vim.o.incsearch = true -- Show match for each character entered during search
 vim.o.scrolloff = 8 -- minimal number of screen lines to keep above and below the cursor
 vim.o.swapfile = false -- disable creation of swap files
 vim.opt.shadafile = "NONE" -- Do not save and restore the shada file
-vim.o.updatetime = 300 -- faster completion (4000ms default)
+vim.o.updatetime = 250 -- faster completion (4000ms default)
 vim.o.cursorline = true -- highlight line where the cursor is
 vim.o.numberwidth = 2 -- set number column width to 2 (default is 4)

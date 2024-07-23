@@ -20,8 +20,8 @@ keymap("v", "<C-c>", '"+y', opts) -- Simulates ctrl+c in windows
 
 -- custom functionality
 keymap("n", "<leader><leader>m", function() -- hot reload local plugins using :Lazy reload
-    local cwd = vim.fn.getcwd()
-    local split_path = vim.fn.split(cwd, "/")
-    local plugin_name = split_path[#split_path]
-    vim.cmd("Lazy reload " .. plugin_name)
+  local cwd = vim.fn.getcwd()
+  local split_path = vim.fn.split(cwd, "/")
+  local plugin_name = split_path[#split_path]
+  vim.cmd("Lazy reload " .. plugin_name)
 end, opts)

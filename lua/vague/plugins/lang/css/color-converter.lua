@@ -1,4 +1,4 @@
 return {
-    "NTBBloodbath/color-converter.nvim",
-    ft = { "css" },
+  "NTBBloodbath/color-converter.nvim",
+  ft = { "css" },
 }
