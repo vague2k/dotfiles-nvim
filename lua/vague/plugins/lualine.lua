@@ -10,6 +10,9 @@ return {
         component_separators = { left = "", right = "" },
         section_separators = { left = "", right = "" },
         always_divide_middle = false,
+        disabled_filetypes = {
+          "neo-tree",
+        },
       },
       sections = {
         lualine_a = { "mode" },

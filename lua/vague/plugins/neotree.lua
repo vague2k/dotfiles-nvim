@@ -10,6 +10,17 @@ return {
   },
   config = function()
     require("neo-tree").setup({
+      close_if_last_window = true,
+      hijack_netrw_behavior = "open_default",
+      source_selector = {
+        winbar = true,
+        show_scrolled_off_parent_node = true,
+        sources = {
+          { source = "filesystem" },
+          { source = "buffers" },
+          { source = "git_status" },
+        },
+      },
       filesystem = {
         filtered_items = {
           hide_dotfiles = false,
@@ -20,9 +31,21 @@ return {
           },
         },
       },
+      event_handlers = {
+        -- removes disables "set number" in neotree window
+        {
+          event = "vim_buffer_enter",
+          handler = function()
+            if vim.bo.filetype == "neo-tree" then vim.cmd([[setlocal fillchars=eob:\ ]]) end
+          end,
+        },
+      },
     })
 
     local opts = { noremap = true, silent = true }
     vim.keymap.set("n", "<leader>pv", ":Neotree toggle<CR>", opts)
+    vim.keymap.set("n", "<leader>pf", ":Neotree focus filesystem<CR>", opts)
+    vim.keymap.set("n", "<leader>pb", ":Neotree focus buffers<CR>", opts)
+    vim.keymap.set("n", "<leader>pg", ":Neotree focus git_status<CR>", opts)
   end,
 }
