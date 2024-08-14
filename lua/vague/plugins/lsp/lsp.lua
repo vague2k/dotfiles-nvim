@@ -73,11 +73,6 @@ return {
             },
           })
         end,
-        tailwindcss = function()
-          require("lspconfig").tailwindcss.setup({
-            on_attach = function(_, bufnr) require("tailwindcss-colors").buf_attach(bufnr) end,
-          })
-        end,
       },
     })
   end,

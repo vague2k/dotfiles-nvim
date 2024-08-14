@@ -10,6 +10,7 @@ return {
     "saadparwaiz1/cmp_luasnip",
     "hrsh7th/cmp-nvim-lua",
     "rafamadriz/friendly-snippets",
+    "onsails/lspkind-nvim",
   },
   config = function()
     local cmp = require("cmp")
@@ -18,45 +19,7 @@ return {
     require("luasnip.loaders.from_vscode").lazy_load()
     luasnip.config.setup({})
 
-    local icons = {
-      Array = "  ",
-      Boolean = "  ",
-      Class = "  ",
-      Color = "  ",
-      Constant = "  ",
-      Constructor = "  ",
-      Enum = "  ",
-      EnumMember = "  ",
-      Event = "  ",
-      Field = "  ",
-      File = "  ",
-      Folder = "  ",
-      Function = "  ",
-      Interface = "  ",
-      Key = "  ",
-      Keyword = "  ",
-      Method = "  ",
-      Module = "  ",
-      Namespace = "  ",
-      Null = " ﳠ ",
-      Number = "  ",
-      Object = "  ",
-      Operator = "  ",
-      Package = "  ",
-      Property = "  ",
-      Reference = "  ",
-      Snippet = "  ",
-      String = "  ",
-      Struct = "  ",
-      Text = "  ",
-      TypeParameter = "  ",
-      Unit = "  ",
-      Value = "  ",
-      Variable = "  ",
-    }
-
     cmp.setup({
-
       snippet = {
         expand = function(args) luasnip.lsp_expand(args.body) end,
       },
@@ -66,16 +29,26 @@ return {
       formatting = {
         expandable_indicator = true,
         fields = { "menu", "abbr", "kind" },
-        format = function(entry, item)
-          item.kind = (icons[item.kind] or "") .. item.kind
-          item.menu = ({
+        format = require("lspkind").cmp_format({
+          menu = {
             nvim_lsp = "[LSP]",
             buffer = "[BUF]",
             luasnip = "[SNIP]",
+            nvim_lua = "[LUA]",
             path = "[PATH]",
-          })[entry.source.name]
-          return item
-        end,
+          },
+          before = require("tailwind-tools.cmp").lspkind_format,
+        }),
+        -- format = function(entry, item)
+        --   item.kind = (icons[item.kind] or "") .. item.kind
+        --   item.menu = ({
+        --     nvim_lsp = "[LSP]",
+        --     buffer = "[BUF]",
+        --     luasnip = "[SNIP]",
+        --     path = "[PATH]",
+        --   })[entry.source.name]
+        --   return item
+        -- end,
       },
 
       window = {
