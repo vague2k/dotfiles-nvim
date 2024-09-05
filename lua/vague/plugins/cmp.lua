@@ -1,5 +1,6 @@
 return {
-  "hrsh7th/nvim-cmp",
+  "yioneko/nvim-cmp",
+  branch = "perf",
   event = { "InsertEnter", "CmdlineEnter" },
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",

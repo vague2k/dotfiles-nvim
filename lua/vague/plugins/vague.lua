@@ -1,6 +1,8 @@
----@type Huez.ThemeConfig
-local M = {
-  set_theme = function(theme)
+return {
+  "vague2k/vague.nvim",
+  dev = true,
+  priority = 1000,
+  config = function()
     require("vague").setup({
       style = {
         boolean = "bold",
@@ -10,9 +12,6 @@ local M = {
         builtin_types = "bold",
       },
     })
-    vim.cmd.colorscheme(theme)
-    return true
+    vim.cmd.colorscheme("vague")
   end,
 }
-
-return M

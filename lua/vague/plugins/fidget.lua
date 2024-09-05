@@ -1,6 +1,7 @@
 return {
   "j-hui/fidget.nvim",
   event = "VeryLazy",
+  enable = false,
   config = function()
     require("fidget").setup({
       -- Options related to LSP progress subsystem
