@@ -29,7 +29,7 @@ return {
       -- ensure these LSPs are installed
       ensure_installed = {
         "lua_ls",
-        "tsserver",
+        "ts_ls",
         "biome",
         "astro",
         "gopls",
