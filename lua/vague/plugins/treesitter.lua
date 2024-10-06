@@ -8,6 +8,7 @@ return {
     treesitter.setup({
       ensure_installed = {
         "vim",
+        "c_sharp",
         "vimdoc",
         "lua",
         "cpp",

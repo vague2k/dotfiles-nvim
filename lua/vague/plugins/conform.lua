@@ -14,6 +14,7 @@ return {
         css = { "prettier" },
         html = { "prettier" },
         markdown = { "prettier" },
+        csharp = { "csharpier" },
       },
 
       format_on_save = {
