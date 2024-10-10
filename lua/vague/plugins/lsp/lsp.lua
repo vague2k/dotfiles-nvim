@@ -22,6 +22,10 @@ return {
       bufmap("<leader>n", function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({})) end) -- toggle LSP inlay hints
     end)
 
+    lsp_zero.extend_lspconfig({
+      float_border = "rounded",
+    })
+
     lsp_zero.setup()
     require("mason").setup({})
     require("mason-lspconfig").setup({
